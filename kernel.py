@@ -3,7 +3,7 @@ from contentFilter import filter_content
 import os
 
 SENSITIVE_DATA = 'You request contans sensitive data. Please change request'
-openai_api_key = "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"#os.getenv('OPENAI_API_KEY')
+openai_api_key = os.getenv('OPENAI_API_KEY')
 
 
 ENGINE_NAME = 'text-davinci-003'
