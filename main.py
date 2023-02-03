@@ -22,7 +22,7 @@ def root(request):
             print(res.json())
             return res.text
     if engine == "dialogflow":
-        response = detect_intent_texts("devtorium-bot-e9vy", "123456", {text}, "en")
+        response = detect_intent_texts("devtorium-bot-e9vy", user, {text}, "en")
         return {"message": response}
 
 

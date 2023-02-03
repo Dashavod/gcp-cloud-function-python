@@ -22,5 +22,7 @@ For all the details see https://cloud.google.com/functions/docs/running/function
 ```
 gcloud auth login
 gcloud config set project PROJECT_ID
+set GOOGLE_APPLICATION_CREDENTIALS gcloud auth application-default login
+
 gcloud functions deploy root --region europe-west3 --allow-unauthenticated --memory 128MB --runtime python39 --timeout 90 --min-instances 0 --max-instances 1 --trigger-http --service-account hello-world-function-sa@for-developers-343319.iam.gserviceaccount.com 
 ```

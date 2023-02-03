@@ -50,6 +50,7 @@ def detect_intent_texts(project_id, session_id, texts, language_code):
     #     return "except"
 
     session_client = dialogflow.SessionsClient()
+    print(session_client)
     session = session_client.session_path(project_id, session_id)
     print("Session path: {}\n".format(session))
 
