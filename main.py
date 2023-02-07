@@ -2,6 +2,7 @@ from kernel import kernel
 import requests
 import os
 from dialogflow import detect_intent_texts
+from stableDiffusion import stableDiffusion
 
 URL = os.getenv('RASA_URL')
 
@@ -24,6 +25,8 @@ def root(request):
     if engine == "dialogflow":
         response = detect_intent_texts("devtorium-bot-e9vy", user, {text}, "en")
         return {"message": response}
-
+    if engine == "stable_diffusion":
+        response = stableDiffusion(text)
+        return  response
 
     return {"message": "Incorrect type value, please change and try again"}
