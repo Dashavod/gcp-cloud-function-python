@@ -1,8 +1,8 @@
-import json
-import os
-
-from googletrans import Translator
-from dialogflow import detect_intent_texts
+# import json
+# import os
+#
+# from googletrans import Translator
+# from dialogflow import detect_intent_texts
 from jsonToStorage import jsonToStore
 from kernel import kernel
 

@@ -25,12 +25,7 @@ Examples:
   "tomorrow" "10 AM" "2 hours" "10 people" "A" "yes"
 """
 
-import argparse
-import json
-import os
-import uuid
 
-from google.oauth2 import service_account
 
 CLIENT_SECRETS_FILE = "cred.json"
 # [START dialogflow_es_detect_intent_text]

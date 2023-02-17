@@ -2,9 +2,8 @@ import datetime
 from datetime import timedelta
 
 from flask import send_file
-from huggingface_hub.inference_api import InferenceApi
 import os
-from io import StringIO, BytesIO
+from io import BytesIO
 import json
 import requests
 import firebase_admin
