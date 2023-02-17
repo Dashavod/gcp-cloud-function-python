@@ -1,10 +1,11 @@
+import os
+
 import openai
-from dotenv import  dotenv_values
 
 SENSITIVE_DATA = 'You request contans sensitive data. Please change request'
 
 
-openai_api_key = dotenv_values(".env").get('OPENAI_API_TOKEN')
+openai_api_key = os.getenv('OPENAI_API_TOKEN')
 
 
 ENGINE_NAME = 'text-davinci-003'

@@ -25,7 +25,7 @@ def root(request):
     if engine == "rasa":
 
             payload = {'message': text, 'sender': user}  # res = await task(payload)
-            res = requests.post(dotenv_values(".env").get('RASA_URL'), json=payload)
+            res = requests.post(os.getenv('RASA_URL'), json=payload)
             print(res.json())
             return res.text
     if engine == "dialogflow":

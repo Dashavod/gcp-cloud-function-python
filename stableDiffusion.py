@@ -17,7 +17,7 @@ default_app = firebase_admin.initialize_app(cred_obj, {"storageBucket": "gcf-sou
 
 def stableDiffusion(prompt: str):
 
-    api_token = dotenv_values(".env").get('RUNWAYML_API_TOKEN')
+    api_token = os.getenv('RUNWAYML_API_TOKEN')
     API_URL = "https://api-inference.huggingface.co/models/runwayml/stable-diffusion-v1-5"
     headers = {"Authorization": f"Bearer {api_token}"}
 
