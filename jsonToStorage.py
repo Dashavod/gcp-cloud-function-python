@@ -1,16 +1,8 @@
 import datetime
 from datetime import timedelta
-
-from flask import send_file
-from huggingface_hub.inference_api import InferenceApi
-import os
-from io import StringIO, BytesIO
 import json
-import requests
 import firebase_admin
 from firebase_admin import storage
-from requests import ReadTimeout
-from dotenv import dotenv_values
 
 cred_obj = firebase_admin.credentials.Certificate('cred.json')
 def jsonToStore(company: dict):

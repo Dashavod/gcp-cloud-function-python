@@ -10,7 +10,6 @@ import requests
 import firebase_admin
 from firebase_admin import storage
 from requests import ReadTimeout
-from dotenv import dotenv_values
 
 cred_obj = firebase_admin.credentials.Certificate('cred.json')
 default_app = firebase_admin.initialize_app(cred_obj, {"storageBucket": "gcf-sources-334279855271-europe-west3"})
