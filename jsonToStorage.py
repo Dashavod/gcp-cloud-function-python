@@ -4,7 +4,7 @@ import json
 import firebase_admin
 from firebase_admin import storage
 
-cred_obj = firebase_admin.credentials.Certificate('cred.json')
+#cred_obj = firebase_admin.credentials.Certificate('cred.json')
 def jsonToStore(company: dict):
     exp = timedelta(hours=3)
     bucket = storage.bucket()
