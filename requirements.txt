@@ -1,10 +1,8 @@
 # Function dependencies, for example:
 # package>=version
-aiohttp~=3.8.3
 requests==2.27.1
 openai~=0.25.0
-google-cloud-dialogflow~=2.19.1
 googletrans~=3.1.0a0
 google~=3.0.0
 Flask~=2.2.2
-Pillow~=9.4.0
+firebase-admin~=6.1.0
