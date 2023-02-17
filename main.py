@@ -18,7 +18,7 @@ def root(request):
     if engine == "gpt":
         response = kernel(f"{template_basic} \n provide information about {text} in the same format as above", "123456", 0.27)
         res =eval(response)
-        res["url"] = jsonToStore(res)
+        #res["url"] = jsonToStore(res)
         return res
     if engine == "rasa":
 
