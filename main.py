@@ -1,10 +1,14 @@
+import json
+
+from dotenv import dotenv_values
+
+from jsonToStorage import jsonToStore
 from kernel import kernel
 import requests
 import os
 from dialogflow import detect_intent_texts
 from stableDiffusion import stableDiffusion
-
-URL = os.getenv('RASA_URL')
+from templates import template_basic
 
 
 def root(request):
@@ -14,12 +18,14 @@ def root(request):
     user = data["sender"]
     engine = data["type"]
     if engine == "gpt":
-        response = kernel(text, user, 0)
-        return {"message": response}
+        response = kernel(f"{template_basic} \n provide information about {text} in the same format as above", "123456", 0.27)
+        res =eval(response)
+        res["url"] = jsonToStore(res)
+        return res
     if engine == "rasa":
 
             payload = {'message': text, 'sender': user}  # res = await task(payload)
-            res = requests.post("http://192.168.0.174:5005/webhooks/rest/webhook", json=payload)
+            res = requests.post(dotenv_values(".env").get('RASA_URL'), json=payload)
             print(res.json())
             return res.text
     if engine == "dialogflow":

@@ -1,9 +1,10 @@
 import openai
-from contentFilter import filter_content
-import os
+from dotenv import  dotenv_values
 
 SENSITIVE_DATA = 'You request contans sensitive data. Please change request'
-openai_api_key = os.getenv('OPENAI_API_KEY')
+
+
+openai_api_key = dotenv_values(".env").get('OPENAI_API_TOKEN')
 
 
 ENGINE_NAME = 'text-davinci-003'
@@ -14,18 +15,15 @@ def kernel(
     prompt: str,
     user_id: str,
     temp: float,
-    max_tokens=250,
+    max_tokens=500,
     min_output=50,
     max_tries=3,
-    presence_penalty=0.6,
+    presence_penalty=0.0,
     frequency_penalty=0.0,
     stop_words=None,
     disable_filter=False
 ) -> str:
     tries = 0
-
-    if not filter_content(prompt, str(user_id)):
-        raise Exception(SENSITIVE_DATA)
 
     while tries < max_tries:
         resp = openai.Completion.create(
@@ -45,9 +43,6 @@ def kernel(
         choices = resp['choices']
         if len(choices) > 0:
             result = choices[0]['text'].strip()
-
-            if len(result) > min_output:
-                if disable_filter or filter_content(result, str(user_id)):
-                    return result
+            return result
 
     return ''

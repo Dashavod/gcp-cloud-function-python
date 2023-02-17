@@ -4,22 +4,20 @@ from datetime import timedelta
 from flask import send_file
 from huggingface_hub.inference_api import InferenceApi
 import os
-from PIL import Image, UnidentifiedImageError
 from io import StringIO, BytesIO
-
 import json
 import requests
-
 import firebase_admin
 from firebase_admin import storage
 from requests import ReadTimeout
+from dotenv import dotenv_values
 
 cred_obj = firebase_admin.credentials.Certificate('cred.json')
 default_app = firebase_admin.initialize_app(cred_obj, {"storageBucket": "gcf-sources-334279855271-europe-west3"})
 
 def stableDiffusion(prompt: str):
 
-    api_token = "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"
+    api_token = dotenv_values(".env").get('RUNWAYML_API_TOKEN')
     API_URL = "https://api-inference.huggingface.co/models/runwayml/stable-diffusion-v1-5"
     headers = {"Authorization": f"Bearer {api_token}"}
 
