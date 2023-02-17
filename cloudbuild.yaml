@@ -16,4 +16,4 @@ steps:
       - --security-level=secure-always
       - --ingress-settings=all
       - --no-allow-unauthenticated
-      - --service-account=334279855271@cloudbuild.gserviceaccount.com
+      - --service-account=devtorium-qna@appspot.gserviceaccount.com
