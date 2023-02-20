@@ -6,7 +6,7 @@ import os
 from io import BytesIO
 import json
 import requests
-import firebase_admin
+#import firebase_admin
 from google.cloud import storage
 from requests import ReadTimeout
 
