@@ -7,7 +7,7 @@ from io import BytesIO
 import json
 import requests
 import firebase_admin
-from firebase_admin import storage
+from google.cloud import storage
 from requests import ReadTimeout
 
 #cred_obj = firebase_admin.credentials.Certificate('cred.json')

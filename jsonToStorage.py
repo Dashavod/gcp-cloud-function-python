@@ -1,7 +1,7 @@
 import datetime
 from datetime import timedelta
 import json
-from firebase_admin import storage
+from google.cloud import storage
 
 #cred_obj = firebase_admin.credentials.Certificate('cred.json')
 def jsonToStore(company: dict):
