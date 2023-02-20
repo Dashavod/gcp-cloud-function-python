@@ -11,7 +11,7 @@ from firebase_admin import storage
 from requests import ReadTimeout
 
 #cred_obj = firebase_admin.credentials.Certificate('cred.json')
-default_app = firebase_admin.initialize_app(options={"storageBucket": "gcf-sources-334279855271-europe-west3"})
+#default_app = firebase_admin.initialize_app(options={"storageBucket": "gcf-sources-334279855271-europe-west3"})
 
 def stableDiffusion(prompt: str):
 
@@ -42,7 +42,10 @@ def serve_pil_image(pil_img):
 
 def imageToStore(res):
     exp = timedelta(hours=3)
-    bucket = storage.bucket()
+    # bucket = storage.bucket()
+    storage_client = storage.Client(project="devtorium-qna")
+    bucket = storage_client.get_bucket("gcf-sources-334279855271-europe-west3")
+
     blob_new = bucket.blob(str(datetime.datetime.now()))
     blob_new.upload_from_string(res, content_type="image/jpeg")
 
