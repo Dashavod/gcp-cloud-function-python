@@ -49,7 +49,7 @@ def imageToStore(res):
     blob_new = bucket.blob(str(datetime.datetime.now()))
     blob_new.upload_from_string(res, content_type="image/jpeg")
 
-    blob_url = blob_new.generate_signed_url(expiration=exp)
+    blob_url = blob_new.public_url
     return blob_url
 
 
