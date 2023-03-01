@@ -1,4 +1,4 @@
-
+import functions_framework
 
 from jsonToStorage import jsonToStore
 from kernel import kernel
@@ -9,6 +9,7 @@ from stableDiffusion import stableDiffusion
 from templates import template_basic
 
 
+@functions_framework.http
 def root(request):
 
     # Set CORS headers for the preflight request
