@@ -7,9 +7,9 @@ import os
 from dialogflow import detect_intent_texts
 from stableDiffusion import stableDiffusion
 from templates import template_basic
+import functions_framework
 
-
-
+@functions_framework.http
 def root(request):
 
     # Set CORS headers for the preflight request

@@ -5,3 +5,4 @@ openai~=0.25.0
 google~=3.0.0
 Flask~=2.2.2
 google-cloud-storage~=2.7.0
+functions_framework~=3.3.0
