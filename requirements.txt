@@ -4,4 +4,3 @@ requests==2.27.1
 openai~=0.25.0
 google~=3.0.0
 Flask~=2.2.2
-functions-framework~=3.3.0

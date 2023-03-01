@@ -1,4 +1,6 @@
-import functions_framework
+
+
+from jsonToStorage import jsonToStore
 from kernel import kernel
 import requests
 import os
@@ -7,18 +9,18 @@ from stableDiffusion import stableDiffusion
 from templates import template_basic
 
 
-@functions_framework.http
+
 def root(request):
 
     # Set CORS headers for the preflight request
     if request.method == 'OPTIONS':
         # Allows GET requests from any origin with the Content-Type
         # header and caches preflight response for an 3600s
-        print(request.method)
         headers = {
             'Access-Control-Allow-Origin': '*',
             'Access-Control-Allow-Methods': 'GET, POST',
             'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+            'Access-Control-Max-Age': '3600'
         }
 
         return ('', 204, headers)
@@ -30,7 +32,7 @@ def root(request):
     if engine == "gpt":
         response = kernel(f"{template_basic} \n provide information about {text} in the same format as above", "123456", 0.27)
         res =eval(response)
-        #res["url"] = jsonToStore(res)
+        res["url"] = jsonToStore(res)
         return res
     if engine == "rasa":
             payload = {'message': text, 'sender': user}  # res = await task(payload)
