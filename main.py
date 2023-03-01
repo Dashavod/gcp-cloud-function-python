@@ -1,6 +1,4 @@
 import functions_framework
-
-from jsonToStorage import jsonToStore
 from kernel import kernel
 import requests
 import os
