@@ -19,11 +19,16 @@ def root(request):
         headers = {
             'Access-Control-Allow-Origin': '*',
             'Access-Control-Allow-Methods': 'GET, POST',
-            'Access-Control-Allow-Headers': 'Content-Type, Authorization',
-            'Access-Control-Max-Age': '3600'
+            'Access-Control-Allow-Headers': 'Authorization, Content-Type',
+            'Access-Control-Allow-Credentials': 'true'
         }
 
         return ('', 204, headers)
+    headers = {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Credentials': 'true'
+    }
+
     data = request.get_json()
     print(data)
     text = data["message"]
@@ -33,7 +38,7 @@ def root(request):
         response = kernel(f"{template_basic} \n provide information about {text} in the same format as above", "123456", 0.27)
         res =eval(response)
         res["url"] = jsonToStore(res)
-        return res
+        return (res, 200, headers)
     if engine == "rasa":
             payload = {'message': text, 'sender': user}  # res = await task(payload)
             res = requests.post(os.getenv('RASA_URL'), json=payload)
