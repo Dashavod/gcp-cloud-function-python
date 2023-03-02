@@ -8,7 +8,7 @@ from dialogflow import detect_intent_texts
 from stableDiffusion import stableDiffusion
 from templates import template_basic
 import functions_framework
-
+from firestore import *
 @functions_framework.http
 def root(request):
 
@@ -37,8 +37,9 @@ def root(request):
     if engine == "gpt":
         response = kernel(f"{template_basic} \n provide information about {text} in the same format as above", "123456", 0.27)
         res =eval(response)
-        res["url"] = jsonToStore(res)
-        return (res, 200, headers)
+        id = add_document_to_firestore(res)
+        document = find_document_in_firestore_by_id(id)
+        return document
     if engine == "rasa":
             payload = {'message': text, 'sender': user}  # res = await task(payload)
             res = requests.post(os.getenv('RASA_URL'), json=payload)
