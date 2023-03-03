@@ -7,4 +7,4 @@ def add_document_to_firestore(doc):
 
 def find_document_in_firestore_by_id(company_id):
     db = firestore.Client()
-    return db.collection(u'Organizations').document(company_id).get()
+    return db.collection(u'Organizations').document(company_id).get().to_dict()
