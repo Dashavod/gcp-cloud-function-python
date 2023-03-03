@@ -130,3 +130,5 @@ dmypy.json
 
 .idea
 /for-developers-*.json
+devtorium-qna-36a03984bef0.json
+test.py
