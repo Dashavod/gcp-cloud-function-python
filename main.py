@@ -12,6 +12,7 @@ from firestore import *
 @functions_framework.http
 def root(request):
     data = request.get_json()
+    if data["key"] != os.getenv('RASA_URL'): return ("Unautorized",401)
     print(data)
     text = data["message"]
     user = data["sender"]
