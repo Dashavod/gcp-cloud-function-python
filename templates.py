@@ -1,26 +1,23 @@
 template_basic = {
-    "site": "nordea.se",
-    "headline": "Nordea is a leading Nordic financial services group providing banking, insurance, asset management, and other financial services.",
-    "Founded": 1820,
-    "Headquarters": "Stockholm, Sweden",
-    "Region": [
-        "Europe",
-        "Nordic"
+    "site": "youtube.com",
+    "headline": "YouTube is a global video-sharing platform where users can watch, upload, and share videos.",
+    "founded": 2005,
+    "name": "Youtube",
+    "country": "United States",
+    "headquarters": "San Bruno, California",
+    "region": [
+        "Global"
     ],
-    "Industries": [
-        "Banking",
-        "Insurance",
-        "Asset Management",
-        "Financial Services"
-    ],
-    "Company type": "for profit",
-    "Technologies": [
+    "industries": ["Finance","Insurance"],
+    "company_type": "for profit",
+    "technologies": [
         "AI",
         "Cloud",
         "Big Data"
     ],
-    "Mission": "Provide customers with financial security and peace of mind",
-    "Values": "Integrity, Innovation, and Inclusiveness",
-    "Revenue": "SEK 517 billion",
-    "Number of employees": "33,000",
-    "Info": "Nordea is a leading Nordic financial services group providing banking, insurance, asset management, and other financial services. Founded in 1820, the company has grown to become one of the largest financial services groups in the region. Nordea offers a wide range of products and services, including retail banking, corporate banking, private banking, asset management, insurance, and investment banking. The company also provides advice and guidance to customers. Nordea is committed to providing customers with financial security and peace of mind, and is focused on developing innovative solutions to meet the needs of its customers. Nordea has been recognized for its commitment to sustainability, and was named one of the world's most sustainable companies"}
+    "mission": "Give everyone a voice and show them the world",
+    "values": "Creativity, Community, and Responsibility",
+    "revenue": "1500000",
+    "number_of_employees": 150,
+    "info": "YouTube is a global video-sharing platform where users can watch, upload, and share videos. Founded in 2005, the platform has grown to become one of the largest video-sharing websites in the world. YouTube offers a wide range of content, including music videos, educational videos, movie trailers, and more. The platform also allows users to create their own channels and upload their own videos. YouTube is committed to giving everyone a voice and showing them the world, and is focused on developing innovative solutions to meet the needs of its users. YouTube has been recognized for its commitment to creativity, community, and responsibility, and was named one of the world's most innovative companies."
+}

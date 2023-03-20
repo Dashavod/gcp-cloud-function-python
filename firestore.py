@@ -1,4 +1,4 @@
-from google.cloud import firestore , exceptions
+from google.cloud import firestore, exceptions
 
 def add_document_to_firestore(doc):
     db = firestore.Client()
