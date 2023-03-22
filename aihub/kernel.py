@@ -4,9 +4,11 @@ import openai
 
 SENSITIVE_DATA = 'You request contans sensitive data. Please change request'
 
+from dotenv import dotenv_values
 
-openai_api_key = os.getenv('OPENAI_API_TOKEN')
-
+# for google function os.getenv('OPENAI_API_TOKEN')
+# for local  dotenv_values("env/.env")['OPENAI_API_TOKEN']
+openai_api_key = os.getenv('OPENAI_API_TOKEN') if os.getenv('OPENAI_API_TOKEN') else dotenv_values("./env/.env")['OPENAI_API_TOKEN']
 
 ENGINE_NAME = 'text-davinci-003'
 openai.api_key = openai_api_key

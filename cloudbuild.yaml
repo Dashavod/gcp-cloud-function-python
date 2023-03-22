@@ -16,4 +16,4 @@ steps:
       - --security-level=secure-always
       - --ingress-settings=all
       - --no-allow-unauthenticated
-      - --service-account=devtorium-qna@appspot.gserviceaccount.com
+      - --services-account=devtorium-qna@appspot.gserviceaccount.com

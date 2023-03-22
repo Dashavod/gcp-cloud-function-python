@@ -1,4 +1,4 @@
-template_basic = {
+{
     "site": "youtube.com",
     "headline": "YouTube is a global video-sharing platform where users can watch, upload, and share videos.",
     "founded": 2005,
@@ -8,7 +8,7 @@ template_basic = {
     "region": [
         "Global"
     ],
-    "industries": ["Finance","Insurance"],
+    "industries": "Finance and insurance",
     "company_type": "for profit",
     "technologies": [
         "AI",
@@ -21,3 +21,6 @@ template_basic = {
     "number_of_employees": 150,
     "info": "YouTube is a global video-sharing platform where users can watch, upload, and share videos. Founded in 2005, the platform has grown to become one of the largest video-sharing websites in the world. YouTube offers a wide range of content, including music videos, educational videos, movie trailers, and more. The platform also allows users to create their own channels and upload their own videos. YouTube is committed to giving everyone a voice and showing them the world, and is focused on developing innovative solutions to meet the needs of its users. YouTube has been recognized for its commitment to creativity, community, and responsibility, and was named one of the world's most innovative companies."
 }
+
+provide information about **your_company** in the same format as above and use only one from this industries:
+ **your_industries** to describe a company
