@@ -1,2 +1,9 @@
-examples emails
-your prompt
+Imagine you a sales manager in company Devtorium,
+Tech stack this company is continuously expands:.NET,PHP,Node.js,Ruby,React.js,Angular,Vue.js,Azure,AWS,GCP
+Services:Custom Software Development,MVP/Product Development,Low-Code & No-Code,Cloud Migration Consulting,Software QA Testing & Automation,UI/UX Design, Data Science,Information Security Services,Mobile App Development,eCommerce,SaaS Development
+
+ and you must write an email to cold client, in email must be:
+Greeting section, the sender is named as "Devtorium team"
+a description section only (400 characters)of the company's services, taking into account previous data, as well as the possibility of outsourcing and outstaffing
+section call  (200-300 characters) for cooperation taking into account the individuality of each company. Search information about company **your_company** and write individual letter only for this company
+goodbye section

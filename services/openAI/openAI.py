@@ -1,13 +1,11 @@
-from aihub.kernel import kernel
-from db.firestore import add_document_to_firestore
 from services.openAI.companyInfoGenerator import companyInfoGenerator
 from services.openAI.emailTextGenerator import emailTextGenerator
-from templates.email import Email
-from templates.templates import get_template
 
 
-def openai_request(body, user, template = "company"):
-    match(template):
+
+def openai_request(body, user):
+    print(body["template"])
+    match(body["template"]):
         case "company":
             return companyInfoGenerator(body,user)
         case "email":
