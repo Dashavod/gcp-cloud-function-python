@@ -5,7 +5,7 @@ from templates.templates import get_template
 
 
 def companyInfoGenerator(body,user):
-    industries = [item["name"] for item in body["industries"]]
+    industries = body["industries"]
     print(','.join(industries))
     template = get_template(body["message"] ,"companyInfo",','.join(industries))
     response = kernel(template, user, 0.27)
