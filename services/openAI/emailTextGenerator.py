@@ -10,7 +10,7 @@ def emailTextGenerator(data,user):
     print("template",template)
     if len(template) > 3500:
         print("template too long")
-        return "Too long message, please shorten the text"
+        return {"message": "Too long message, please shorten the text"}
     response = kernel(template, user, 0.8,max_tokens=4000)
     print(response)
     # try:
