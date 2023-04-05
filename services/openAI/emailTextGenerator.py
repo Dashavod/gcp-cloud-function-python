@@ -5,13 +5,13 @@ from templates.email import Email
 from templates.templates import get_template
 
 
-def emailTextGenerator(data,user):
-    template = get_template(html2text.html2text(data["message"]),type="emailsTemplate")
-    print("template",template)
+def emailTextGenerator(data, user):
+    template = get_template(html2text.html2text(data["message"]), type="emailsTemplate")
+    print("template", template)
     if len(template) > 3000:
         print("template too long")
         return {"message": "Too long message, please shorten the text"}
-    response = kernel(template, user, 0.8,max_tokens=3000)
+    response = kernel(template, user, 0.8, max_tokens=3000)
     print(response)
     # try:
     #     res = eval(response)
@@ -19,10 +19,9 @@ def emailTextGenerator(data,user):
     #     print(f"OpenAI provide information with wrong stucture, please retry\n {e}")
     #     return f"OpenAI provide information with wrong stucture, please retry\n {e}"
     email = Email({
-        "company_name":"dev",
+        "company_name": "dev",
         "content": response,
         "email_type": "rephrase"
     })
     add_document_to_firestore(email, "Emails")
     return email.__dict__
-
