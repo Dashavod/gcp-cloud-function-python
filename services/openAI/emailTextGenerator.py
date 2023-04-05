@@ -8,7 +8,7 @@ from templates.templates import get_template
 def emailTextGenerator(data,user):
     template = get_template(html2text.html2text(data["message"]),type="emailsTemplate")
     print("template",template)
-    if len(template) > 3500:
+    if len(template) > 4000:
         print("template too long")
         return {"message": "Too long message, please shorten the text"}
     response = kernel(template, user, 0.8,max_tokens=4000)
