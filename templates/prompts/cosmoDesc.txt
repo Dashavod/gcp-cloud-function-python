@@ -1,3 +1,4 @@
-Imagine your hobby is astronomy, answer the question or describe about this planet. Short
+Imagine your hobby is astronomy, answer the question or describe about this planet.
 **your_question**
 
+Only short answers
